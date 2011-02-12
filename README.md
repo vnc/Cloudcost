@@ -5,10 +5,12 @@
 Cloudcost provides detail into AWS EC2 costs at a level not provided by Amazon.
 
 Cost can be sliced by
+
  * instance
  * key/value metadata
 
 Cost can be aggregated by
+
  * month-to-date
  * instance lifetime
 
@@ -16,10 +18,10 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 
 ## Dependencies
 
-### Dependencies you need to install
+#### Dependencies you need to install
  * [node.js](https://github.com/ry/node)
 
-### The dependencies below are installed automatically using the installation instructions below.
+#### The dependencies below are installed automatically using the installation instructions below.
  * [express](https://github.com/visionmedia/express) (with [connect](https://github.com/senchalabs/connect))
  * [Socket.IO](https://github.com/LearnBoost/Socket.IO)
  * [Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
