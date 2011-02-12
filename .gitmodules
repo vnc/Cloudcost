@@ -16,3 +16,9 @@
 [submodule "lib/merger"]
 	path = lib/merger
 	url = http://github.com/shimondoodkin/nodejs-clone-extend.git
+[submodule "lib/sax-js"]
+	path = lib/sax-js
+	url = http://github.com/isaacs/sax-js.git
+[submodule "lib/node-xml2js"]
+	path = lib/node-xml2js
+	url = http://github.com/maqr/node-xml2js.git

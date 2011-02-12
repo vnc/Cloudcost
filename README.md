@@ -2,7 +2,7 @@
 
 ## Description
 
-Cloudcost provides detail into AWS EC2 costs at a level not provided by Amazon.
+Cloudcost is a node.js web app that provides detail into AWS EC2 costs at a level not provided by Amazon bills or usage reports.
 
 Cost can be sliced by
 
