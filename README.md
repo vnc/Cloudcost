@@ -1,8 +1,20 @@
 # Cloudcost
 
-## Description
+## Inspriation
 
-Cloudcost is a node.js web app that provides detail into AWS EC2 costs at a level not provided by Amazon bills or usage reports.
+_"When performance is measured, performance improves. When performance is measured and reported back, the rate of improvement accelerates."_
+
+_Thomas S. Monson. Favorite Quotations from the Collection of Thomas S. Monson. Deseret Books, 1985_
+
+_[http://www.tdan.com/i010ht03.htm](http://www.tdan.com/i010ht03.htm)_
+
+_[Thomas S. Monson](http://en.wikipedia.org/wiki/Thomas_S._Monson)_
+
+Honestly the inspiration was my boss and our exponentially increasing AWS bill... but this sounds cooler.
+
+## About
+
+Cloudcost is a node.js web app that provides detail into AWS EC2 costs at a level not available in Amazon bills or usage reports.
 
 Cost can be sliced by
 
@@ -34,7 +46,7 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 ## Installation
 
     $ git clone git://github.com/crcastle/cloudcost.git
-    $ cd cloudcost
+    $ cd Cloudcost
 
 	# Update submodules
 	$ git submodule update --init --recursive
@@ -44,11 +56,13 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
     $ cp config.json.sample config.json
 
 	# open Clouscost/lib/aws-lib/lib/ec2.js
-	# change the date on line 25 to 2009-11-30
+	# change the date on line 25 to 2010-11-15
 	# (or later might work)
 
 ## Running
 
 	$ node server.js
-	
+
+Once it you see "dataGrid refreshed" at least one time on the console you're ready to go.
+
 Go to [http://localhost:8081/](http://localhost:8081/)
