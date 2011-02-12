@@ -21,13 +21,14 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 #### Dependencies you need to install
  * [node.js](https://github.com/ry/node)
 
-#### The dependencies below are installed automatically using the installation instructions below.
+#### The dependencies below are installed automatically (as git submodules) using the installation instructions below.
  * [express](https://github.com/visionmedia/express) (with [connect](https://github.com/senchalabs/connect))
  * [Socket.IO](https://github.com/LearnBoost/Socket.IO)
  * [Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
  * [html5-boilerplate](https://github.com/robrighter/html5-boilerplate)
  * [aws-lib](https://github.com/mirkok/aws-lib) (renamed as merger in lib directory)
- * aws-costs
+ * [xml2js](https://github.com/maqr/node-xml2js/)
+ * [sax](https://github.com/isaacs/sax-js/)
 	
 
 ## Installation
@@ -41,6 +42,10 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
     # Copy the default configuration file
 	# and add your AWS account credentials
     $ cp config.json.sample config.json
+
+	# open Clouscost/lib/aws-lib/lib/ec2.js
+	# change the date on line 25 to 2009-11-30
+	# (or later might work)
 
 ## Running
 
