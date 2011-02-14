@@ -6,7 +6,8 @@ var connect = require('connect')
 	, fs = require('fs')
     , io = require('Socket.IO-node')
 	, aws = require('aws-costs')
-	, awslib = require('aws-lib'); // this is only included for debugging
+	, awslib = require('aws-lib') // this is only included for debugging
+	, simpledb = require('simpledb');
 
 //read config.json
 try {
@@ -98,6 +99,7 @@ server.get('/', function(req, res) {
 
 // returns json for table
 server.post('/instances', function(req, res) {
+	console.log(req.body);
 	var query = {
 		page: (req.body.page) ? req.body.page : 1
 		,rp: (req.body.rp) ? req.body.rp : 15
@@ -106,6 +108,8 @@ server.post('/instances', function(req, res) {
 		,query: (req.body.query) ? req.body.query : ''
 		,qtype: (req.body.qtype) ? req.body.qtype : ''
 	};
+	console.log("query: " + query.query);
+	console.log("qtype: " + query.qtype);
 	
 	aws.getInstances(query, function(dataGrid) {
 						res.send(JSON.stringify(dataGrid));

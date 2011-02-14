@@ -45,18 +45,18 @@ $(document).ready(function() {
 			{display: 'MTD Cost ($)', name : 'monthCost', width: 75, sortable : true, align: 'right'}
 			],
 		searchitems : [
-			{display: 'Instance ID', name : 'instanceId'},
-			{display: 'Instance State', name : 'instanceState', isdefault: true},
-			{display: 'Instance Type', name : 'instanceType'},
-			{display: 'Creator', name : 'createdBy'},
+			//{display: 'Instance ID', name : 'instanceId'},
+			//{display: 'Instance State', name : 'instanceState', isdefault: true},
+			//{display: 'Instance Type', name : 'instanceType'},
+			//{display: 'Creator', name : 'createdBy'},
 			{display: 'Name', name : 'name'},
 			{display: 'Agency', name : 'agency'},
 			{display: 'Office', name : 'office'},
 			{display: 'Client', name : 'client'},
-			{display: 'Product', name : 'product'}					
+			{display: 'Product', name : 'product', isdefault: true}					
 			],
-		sortname: "launchTime",
-		sortorder: "asc",
+		sortname: "cost",
+		sortorder: "desc",
 		usepager: true,
 		singleSelect: true,
 		title: 'AWS Instances',
