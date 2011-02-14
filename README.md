@@ -30,15 +30,26 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 
 ## Dependencies
 
-#### Dependencies you need to install
+#### Dependencies you need to figure out
  * [node.js](https://github.com/ry/node)
+ * Any time an instance is started, stopped, or terminated a GET request needs to be made like the following:  
+
+**This webservice is not yet implemented!! To get instance history a log in simpledb is currently used.**
+**The aim of the webservice is to abstract away the use of a custom simpledb domain.**
+
+	http://localhost:8081/ec2?action=create&instanceId=i-e890bce7
+	http://localhost:8081/ec2?action=start&instanceId=i-e890bce7
+	http://localhost:8081/ec2?action=stop&instanceId=i-e890bce7
+	http://localhost:8081/ec2?action=terminate&instanceId=i-e890bce7
 
 #### The dependencies below are installed automatically (as git submodules) using the installation instructions below.
  * [express](https://github.com/visionmedia/express) (with [connect](https://github.com/senchalabs/connect))
  * [Socket.IO](https://github.com/LearnBoost/Socket.IO)
  * [Socket.IO-node](https://github.com/LearnBoost/Socket.IO-node)
  * [html5-boilerplate](https://github.com/robrighter/html5-boilerplate)
- * [aws-lib](https://github.com/mirkok/aws-lib) (renamed as merger in lib directory)
+ * [aws-lib](https://github.com/mirkok/aws-lib)
+ * [simpledb](https://github.com/rjrodger/simpledb)
+ * [nodejs-clone-extend](https://github.com/shimondoodkin/nodejs-clone-extend) (renamed as merger in lib directory)
  * [xml2js](https://github.com/maqr/node-xml2js/)
  * [sax](https://github.com/isaacs/sax-js/)
 	
@@ -53,6 +64,7 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 
     # Copy the default configuration file
 	# and add your AWS account credentials
+	# note that credentials are defined separately for ec2 and simpledb
     $ cp config.json.sample config.json
 
 	# open Clouscost/lib/aws-lib/lib/ec2.js
@@ -63,6 +75,7 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 
 	$ node server.js
 
-Once it you see "dataGrid refreshed" at least one time on the console you're ready to go.
+Once it you see "dataGrid refreshed" at least one time on the console you're ready to go. 
+Total Cost and MTD (month-to-date) Cost will take a little time to update depending on how many instances you have.
 
 Go to [http://localhost:8081/](http://localhost:8081/)

@@ -20,7 +20,9 @@ try {
 //setup default variables
 var port = (process.env.PORT || config.port) // use env var, otherwise use value from config.json
 	, key = (process.env.AWS_KEY || config.aws_key)
-	, secretKey = (process.env.AWS_SECRET || config.aws_secret_key);
+	, secretKey = (process.env.AWS_SECRET || config.aws_secret_key)
+	, simpledbKey = (process.env.AWS_SIMPLEDB_KEY || config.aws_simpledb_key)
+	, simpledbSecretKey = (process.env.AWS_SIMPLEDB_SECRET || config.aws_simpledb_secret_key);
 
 //Setup Express
 var server = express.createServer();
@@ -70,8 +72,12 @@ io.on('connection', function(client){
 });
 
 // get instance data from AWS and setup refresh/reconcile interval
-aws.runDataRefresh(key, secretKey, 600000); // refresh every ten minutes
-
+aws.runDataRefresh({key: key,
+					secretKey: secretKey,
+					sdbKey: simpledbKey,
+					sdbSecretKey: simpledbSecretKey
+					},
+					600000); // refresh every ten minutes
 
 ///////////////////////////////////////////
 //              Routes                   //
@@ -90,6 +96,7 @@ server.get('/', function(req, res) {
 	});
 });
 
+// returns json for table
 server.post('/instances', function(req, res) {
 	var query = {
 		page: (req.body.page) ? req.body.page : 1
@@ -104,13 +111,19 @@ server.post('/instances', function(req, res) {
 
 });
 
+// this is for a web service that records the time and name of instances
+// when they start, stop, or terminate
+server.get('/ec2', function(req, res) {
+	
+});
+
+// for debugging json
 server.get('/instance_debug', function(req, res) {
 	ec2 = awslib.createEC2Client(key,secretKey);
 	ec2.call("DescribeInstances", {}, function(result) {
 		res.send(JSON.stringify(result));
 	});
 });
-
 
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){

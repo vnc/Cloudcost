@@ -22,3 +22,6 @@
 [submodule "lib/node-xml2js"]
 	path = lib/node-xml2js
 	url = http://github.com/maqr/node-xml2js.git
+[submodule "lib/simpledb"]
+	path = lib/simpledb
+	url = https://github.com/rjrodger/simpledb
