@@ -76,6 +76,6 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 	$ node server.js
 
 Once it you see "dataGrid refreshed" at least one time on the console you're ready to go. 
-Total Cost and MTD (month-to-date) Cost will take a little time to update depending on how many instances you have.
+Total Cost and MTD (month-to-date) Cost will take a little time to update depending on how many instances you have and how many starts and stops there are for each.
 
 Go to [http://localhost:8081/](http://localhost:8081/)

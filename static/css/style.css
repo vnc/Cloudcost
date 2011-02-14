@@ -210,6 +210,34 @@ header {
 	color: #ccc;
 }
 
+#summary {
+	margin: 50px;
+	display: block;
+}
+
+#summary p {
+	display: inline;
+}
+
+.stat_label {
+	display: inline;
+	font-size: 20px;
+	color: #ccc;
+	padding: 5px;
+	margin-left: 50px;
+}
+
+.statistic {
+	width: 400px;
+	height: 400px;
+	display: inline;
+	margin: 5px;
+	padding: 30px;
+	text-align: center;
+	font-size: 75px;
+	border: 1px dashed purple;
+	background-color: #222;
+}
 
 
 

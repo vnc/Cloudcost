@@ -61,7 +61,7 @@ $(document).ready(function() {
 		singleSelect: true,
 		title: 'AWS Instances',
 		useRp: true,
-		rp: 25,
+		rp: 20,
 		showTableToggleBtn: true,
 		width: "auto",
 		height: "auto"

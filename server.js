@@ -77,7 +77,7 @@ aws.runDataRefresh({key: key,
 					sdbKey: simpledbKey,
 					sdbSecretKey: simpledbSecretKey
 					},
-					600000); // refresh every ten minutes
+					3600000); // refresh every hour
 
 ///////////////////////////////////////////
 //              Routes                   //
@@ -103,6 +103,8 @@ server.post('/instances', function(req, res) {
 		,rp: (req.body.rp) ? req.body.rp : 15
 		,sortname: (req.body.sortname) ? req.body.sortname : 'launchTime'
 		,sortorder: (req.body.sortorder) ? req.body.sortorder : 'desc'
+		,query: (req.body.query) ? req.body.query : ''
+		,qtype: (req.body.qtype) ? req.body.qtype : ''
 	};
 	
 	aws.getInstances(query, function(dataGrid) {
