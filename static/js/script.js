@@ -55,7 +55,7 @@ $(document).ready(function() {
 			{display: 'Client', name : 'CLIENT'},
 			{display: 'Product', name : 'PRODUCT', isdefault: true}					
 			],
-		sortname: "cost",
+		sortname: "COST",
 		sortorder: "desc",
 		usepager: true,
 		singleSelect: true,
