@@ -20,8 +20,7 @@ try {
 
 //setup default variables
 var port = (process.env.PORT || config.port) // use env var, otherwise use value from config.json
-	, key = (process.env.AWS_KEY || config.aws_key)
-	, secretKey = (process.env.AWS_SECRET || config.aws_secret_key)
+	, awsKeySet = (process.env.AWS_KEY || config.aws_keys)
 	, simpledbKey = (process.env.AWS_SIMPLEDB_KEY || config.aws_simpledb_key)
 	, simpledbSecretKey = (process.env.AWS_SIMPLEDB_SECRET || config.aws_simpledb_secret_key);
 
@@ -73,8 +72,7 @@ io.on('connection', function(client){
 });
 
 // get instance data from AWS and setup refresh/reconcile interval
-aws.runDataRefresh({key: key,
-					secretKey: secretKey,
+aws.runDataRefresh({keySet: awsKeySet,
 					sdbKey: simpledbKey,
 					sdbSecretKey: simpledbSecretKey
 					},
