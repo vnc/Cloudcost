@@ -69,7 +69,7 @@ _Note that EC2 cost detail prior to use of Cloudcost is unavailable. Cloudcost n
 
 	# open Clouscost/lib/aws-lib/lib/ec2.js
 	# change the date on line 25 to 2010-11-15
-	# (or later might work)
+	# if you don't do this, instance tags will not show up
 
 ## Running
 
