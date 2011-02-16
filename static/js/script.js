@@ -42,7 +42,8 @@ $(document).ready(function() {
 			{display: 'Client', name : 'CLIENT', width: 75, sortable : true, align: 'left'},
 			{display: 'Product', name : 'PRODUCT', width: 75, sortable : true, align: 'left'},
 			{display: 'Total Cost ($)', name : 'COST', width: 75, sortable : true, align: 'right'},
-			{display: 'MTD Cost ($)', name : 'MONTH_COST', width: 75, sortable : true, align: 'right'}
+			{display: 'MTD Cost ($)', name : 'MONTH_COST', width: 75, sortable : true, align: 'right'},
+			{display: 'YTD Cost ($)', name : 'YEAR_COST', width: 75, sortable : true, align: 'right'}
 			],
 		searchitems : [
 			{display: 'Instance ID', name : 'ID'},
@@ -55,7 +56,7 @@ $(document).ready(function() {
 			{display: 'Client', name : 'CLIENT'},
 			{display: 'Product', name : 'PRODUCT', isdefault: true}					
 			],
-		sortname: "COST",
+		sortname: "YEAR_COST",
 		sortorder: "desc",
 		usepager: true,
 		singleSelect: true,

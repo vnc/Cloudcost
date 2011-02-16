@@ -525,9 +525,12 @@
 				this.rePosDrag();
 				
 				// update summary stats
-				$("#total_cost").text(data.totalCost);
-				$("#month_cost").text(data.monthCost);
-				$("#count").text(data.total);
+				if (!isNaN(parseInt(data.total))) {
+					$("#total_cost").text(data.totalCost);
+					$("#month_cost").text(data.monthCost);
+					$("#year_cost").text(data.yearCost);
+					$("#count").text(data.total);
+				}
 				
 				tbody = null; data = null; i = null; 
 				
