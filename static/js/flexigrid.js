@@ -529,6 +529,7 @@
 					$("#total_cost").text(data.totalCost);
 					$("#month_cost").text(data.monthCost);
 					$("#year_cost").text(data.yearCost);
+					$("#last_month_cost").text(data.lastMonthCost);
 					$("#count").text(data.total);
 				}
 				

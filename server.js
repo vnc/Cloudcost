@@ -120,7 +120,9 @@ server.get('/ec2', function(req, res) {
 
 // for debugging json
 server.get('/instance_debug', function(req, res) {
-	ec2 = awslib.createEC2Client(key,secretKey);
+	console.log(awsKeySet[0].keys.key);
+	console.log(awsKeySet[0].keys.secretKey);
+	ec2 = awslib.createEC2Client(awsKeySet[0].keys.key,awsKeySet[0].keys.secretKey);
 	ec2.call("DescribeInstances", {}, function(result) {
 		res.send(JSON.stringify(result));
 	});

@@ -43,6 +43,7 @@ $(document).ready(function() {
 			{display: 'Product', name : 'PRODUCT', width: 75, sortable : true, align: 'left'},
 			{display: 'Total Cost ($)', name : 'COST', width: 75, sortable : true, align: 'right'},
 			{display: 'MTD Cost ($)', name : 'MONTH_COST', width: 75, sortable : true, align: 'right'},
+			{display: 'Last Month\'s Cost ($)', name : 'LAST_MONTH_COST', width: 75, sortable : true, align: 'right'},
 			{display: 'YTD Cost ($)', name : 'YEAR_COST', width: 75, sortable : true, align: 'right'}
 			],
 		searchitems : [
